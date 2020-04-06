@@ -1,5 +1,5 @@
 
-from rest_framework.generics import GenericAPIView
+from rest_framework.generics import GenericAPIView, ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from rest_framework.mixins import ListModelMixin, CreateModelMixin, RetrieveModelMixin, UpdateModelMixin, DestroyModelMixin
 
 from LibraryModelViewSet.models import PublisherModel
@@ -36,3 +36,14 @@ class PublisherViewDetail(RetrieveModelMixin,
 
     def put(self, request, *args, **kwargs):
         return self.update(request, *args, **kwargs)
+
+
+# 进阶版
+class PublisherSupperView(ListCreateAPIView):
+    queryset = PublisherModel.objects.all()
+    serializer_class = PublisherSerializers
+
+
+class PublisherSupperViewDetail(RetrieveUpdateDestroyAPIView):
+    queryset = PublisherModel.objects.all()
+    serializer_class = PublisherSerializers

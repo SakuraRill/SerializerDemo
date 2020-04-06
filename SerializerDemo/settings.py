@@ -79,6 +79,11 @@ TEMPLATES = [
 WSGI_APPLICATION = 'SerializerDemo.wsgi.application'
 
 
+REST_FRAMEWORK = {
+    'NON_FIELD_ERRORS_KEY': 'non_field_errors'
+}
+
+
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
