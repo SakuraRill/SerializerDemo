@@ -13,5 +13,4 @@ class PublisherView(View):
         print("View: dispatch")
         ret = super(PublisherView, self).dispatch(request, *args, **kwargs)
         print(f"View-ret：{ret}")
-
         return HttpResponse(ret)
